@@ -1,0 +1,15 @@
+{{define "base"}}
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="/styles/a4.css" type="text/css" />
+
+        {{template "header" .}} {{template "favicons" .}}
+    </head>
+
+    <body>
+        {{template "content" .}}
+    </body>
+</html>
+{{end}}

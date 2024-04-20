@@ -1,0 +1,257 @@
+@import url("fonts/stylesheet.css");
+
+:root {
+    --site-background: #ccc;
+    --page-background: #fff;
+    --shadow-color: rgba(75, 75, 75, 0.2);
+
+    --title-red: #58180d;
+    --under-gold: #c9ad6a;
+    --header-blue: #668fad;
+    --background-tan: #f7f2e5;
+    --upper-gold: #b89a67;
+    --monster-tan: #fdf1dc;
+    --monster-tan-dark: #f0dbb5;
+    --comment-green: #e0e5c1;
+    --item-table-pink: #e9cdc2;
+    --rule-red: #9c2b1b;
+    --sidenote-grey: #e8dfd6;
+    --readaloud-red: #e4d0bf;
+
+    --main-font: "Bookinsanity";
+    --header-font: "Mr Eaves Small Caps";
+    --table-font: "Scaly Sans";
+    --drop-cap-font: "Medici Text";
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+    line-height: 1.4em;
+    font-family: var(--main-font);
+    background-color: var(--site-background);
+}
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.page {
+    margin: 1cm auto;
+    background: var(--background-tan);
+    box-shadow: 0 4px 5px var(--shadow-color);
+    outline: 0;
+}
+
+@media screen {
+    div.page-break::before {
+        content: "";
+        display: block;
+        height: 0.8cm;
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
+        background-color: white;
+        box-shadow: 0 6px 5px var(--shadow-color);
+    }
+    div.page-break {
+        display: block;
+        height: 1.8cm;
+        margin-left: -2.5cm;
+        margin-right: -2.5cm;
+        margin-top: 1.2cm;
+        margin-bottom: 2cm;
+        background: var(--site-background);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2em;
+    color: var(--title-red);
+    font-family: var(--header-font);
+    margin-bottom: 0.1em;
+    page-break-after: avoid;
+}
+h1 {
+    margin-bottom: 0.3em;
+}
+h3 {
+    border-bottom: 2px solid var(--under-gold);
+}
+
+p {
+    margin: 0;
+}
+
+p + p {
+    text-indent: 0.5cm;
+}
+
+table {
+    page-break-inside: avoid;
+    border-collapse: collapse;
+    margin: auto;
+    width: 120%;
+    font-family: var(--table-font);
+}
+table tr,
+table th,
+table td {
+    border: 0;
+    padding: 0.5ex;
+    text-align: left;
+    font-size: 11pt;
+}
+table thead th {
+    vertical-align: bottom;
+}
+table tbody td {
+    vertical-align: top;
+}
+tbody tr:nth-child(odd) {
+    background: var(--monster-tan-dark);
+}
+thead th:nth-child(1),
+td:nth-child(1) {
+    text-align: center;
+}
+
+blockquote {
+    margin: 1em 0;
+    width: 100%;
+    font-family: var(--table-font);
+    font-style: italic;
+}
+
+blockquote[cite]:after,
+blockquote cite:before {
+    content: "— " attr(cite);
+}
+blockquote[cite]:after,
+blockquote cite {
+    display: block;
+    text-align: right;
+    font-style: normal;
+}
+
+ul {
+    margin: 0.5em 0;
+    padding-left: 1.2em;
+}
+
+.dropcap:first-letter {
+    float: left;
+    font-size: 4em;
+    line-height: 1em;
+    padding-right: 0.2em;
+    font-family: var(--drop-cap-font);
+}
+
+h3.blue-head {
+    text-align: right;
+    color: var(--header-blue);
+    border-bottom: 2px solid var(--header-blue);
+    line-height: 100%;
+}
+
+div.table-header {
+    font-size: 105%;
+    font-weight: bold;
+    margin-top: 0.5em;
+    display: inline-block;
+    font-family: var(--table-font);
+}
+
+.opening-flavour {
+    margin-top: 0.2em;
+    margin-bottom: 0.3em;
+    font-family: var(--main-font);
+    font-style: italic;
+}
+
+.readaloud,
+.sidenote {
+    padding: 1.5ex;
+    margin: 0.8em 0 0.8em 0;
+    font-family: var(--table-font);
+    line-height: 170%;
+    font-size: 11pt;
+}
+.readaloud {
+    background: var(--readaloud-red);
+    border: solid var(--rule-red);
+    border-width: 0 2px;
+}
+.sidenote {
+    background: var(--sidenote-grey);
+    border: solid black;
+    border-width: 2px 0;
+}
+
+.sidenote h1,
+.sidenote h2,
+.sidenote h3,
+.sidenote h4,
+.sidenote h5,
+.sidenote h6 {
+    margin-top: 0;
+    color: black;
+    font-family: var(--table-font);
+}
+
+.two-columns {
+    column-count: 2;
+    column-gap: 1cm;
+}
+
+.toc {
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+}
+.toc h1 {
+    text-align: center;
+}
+.toc a {
+    color: black;
+    text-decoration: none;
+}
+.toc a:hover {
+    text-decoration: underline;
+}
+.toc ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+.toc > ul > li {
+    margin-bottom: 10px;
+}
+
+@page {
+    orphans: 4;
+    widows: 2;
+}
+
+@media print {
+    html,
+    body {
+        background-color: white;
+    }
+    .page {
+        width: initial !important;
+        min-height: initial !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: initial !important;
+        border-radius: initial !important;
+        background: initial !important;
+        box-shadow: initial !important;
+        page-break-after: always;
+    }
+}
