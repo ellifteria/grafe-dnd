@@ -8,7 +8,20 @@
         {{template "header" .}} {{template "favicons" .}}
     </head>
 
-    <body>
+    <script>
+        function addBackLink() {
+            let pages = document.getElementsByClassName("page");
+            for (const page of pages) {
+                let backLink = document.createElement("a");
+                backLink.innerHTML = "← Back";
+                backLink.setAttribute("href", "javascript:history.back()");
+                backLink.setAttribute("class", "backlink");
+                page.prepend(backLink);
+            }
+        }
+    </script>
+
+    <body onload="addBackLink()">
         {{template "content" .}}
     </body>
 </html>

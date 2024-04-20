@@ -46,6 +46,12 @@ body {
     outline: 0;
 }
 
+a.backlink {
+    font-family: var(--table-font);
+    text-decoration: none;
+    color: var(--header-blue);
+}
+
 @media screen {
     div.page-break::before {
         content: "";
@@ -169,7 +175,7 @@ div.table-header {
     font-family: var(--table-font);
 }
 
-.opening-flavour {
+.opening-flavor {
     margin-top: 0.2em;
     margin-bottom: 0.3em;
     font-family: var(--main-font);
