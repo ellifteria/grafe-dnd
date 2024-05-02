@@ -260,4 +260,8 @@ div.table-header {
         box-shadow: initial !important;
         page-break-after: always;
     }
+
+    .backlink {
+        display: none;
+    }
 }
