@@ -8,6 +8,8 @@
     padding-top: 2cm;
     padding-right: 2cm;
     padding-bottom: 2cm;
+    /* box-shadow: inset 0px 0px 0 2cm #ddd; */
+    /* Uncomment the above line for page margin visualization. */
 }
 @page {
     size: A4 portrait;
