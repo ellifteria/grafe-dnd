@@ -6,30 +6,54 @@
     --page-background-print: #fff;
     --shadow-color: rgba(75, 75, 75, 0.2);
 
-    --title-red: #58180d;
+    --title-red: #7b1e0d; /*#58180d;*/
+
+    --title-blue: #1d4ba2;
+
+    --title-purple: #6b17b1;
+
+    --title-green: #0c9027;
+
+    --title-color: var(--title-blue);
+
+    --rule-red: #9c2b1b;
+    --rule-blue: #26619C;
+
+    --upper-gold: #b89a67;
     --under-gold: #c9ad6a;
     --header-blue: #668fad;
+
     --background-tan: #f7f2e5;
-    --upper-gold: #b89a67;
+
     --monster-tan: #fdf1dc;
     --monster-tan-dark: #f0dbb5;
+
     --comment-green: #e0e5c1;
+
     --item-table-pink: #e9cdc2;
-    --rule-red: #9c2b1b;
+    
     --sidenote-grey: #e8dfd6;
+
     --readaloud-red: #e4d0bf;
 
     --main-font: "Bookinsanity";
+    --alternate-main-font: "Darwin";
     --header-font: "Mr Eaves Small Caps";
     --table-font: "Scaly Sans";
     --drop-cap-font: "Medici Text";
+
+    --main-font-size: 12pt;
+    --side-font-size: 11pt;
+    --table-font-size: 11pt;
+    --table-header-font-size: 105%;
+    --drop-cap-font-size: 4em;
 }
 
 html,
 body {
     margin: 0;
     padding: 0;
-    font-size: 12pt;
+    font-size: var(--main-font-size);
     line-height: 1.4em;
     font-family: var(--main-font);
     background-color: var(--site-background);
@@ -83,7 +107,7 @@ h4,
 h5,
 h6 {
     line-height: 1.2em;
-    color: var(--title-red);
+    color: var(--title-color);
     font-family: var(--header-font);
     margin-bottom: 0.1em;
     page-break-after: avoid;
@@ -116,7 +140,7 @@ table td {
     border: 0;
     padding: 0.5ex;
     text-align: left;
-    font-size: 11pt;
+    font-size: var(--table-font-size);
 }
 table thead th {
     vertical-align: bottom;
@@ -157,7 +181,7 @@ ul {
 
 .dropcap:first-letter {
     float: left;
-    font-size: 4em;
+    font-size: var(--drop-cap-font-size);
     line-height: 1em;
     padding-right: 0.2em;
     font-family: var(--drop-cap-font);
@@ -171,7 +195,7 @@ h3.blue-head {
 }
 
 div.table-header {
-    font-size: 105%;
+    font-size: var(--table-header-font-size);
     font-weight: bold;
     margin-top: 0.5em;
     display: inline-block;
@@ -191,7 +215,7 @@ div.table-header {
     margin: 0.8em 0 0.8em 0;
     font-family: var(--table-font);
     line-height: 170%;
-    font-size: 11pt;
+    font-size: var(--side-font-size);
 }
 .readaloud {
     background: var(--readaloud-red);
@@ -215,20 +239,26 @@ div.table-header {
     font-family: var(--table-font);
 }
 
-.two-columns {
+.two-column {
     column-count: 2;
     column-gap: 1cm;
 }
 
+.two-column-full-page {
+    column-count: 2;
+    column-gap: 1cm;
+    column-fill: auto;
+}
+
 .toc {
     -webkit-column-break-inside: avoid;
-    column-break-inside: avoid;
+    break-inside: avoid;
 }
 .toc h1 {
     text-align: center;
 }
 .toc a {
-    color: black;
+    color: inherit;
     text-decoration: none;
 }
 .toc a:hover {
@@ -248,7 +278,9 @@ div.table-header {
 }
 
 @media print {
-    html,
+    html {
+        background-color: var(--page-background-print);
+    }
     body {
         background-color: var(--page-background-print);
     }

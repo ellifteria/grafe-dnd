@@ -168,3 +168,7 @@
     font-family: "Medici Text";
     src: url('./MediciText/MediciText.otf');
 }
+@font-face {
+    font-family: Darwin;
+    src: url("./Darwin/DarwinSerif-Regular.otf") format("opentype");
+}
