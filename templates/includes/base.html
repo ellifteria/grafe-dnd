@@ -9,7 +9,7 @@
     </head>
 
     <script>
-        function addBackLink() {
+        var addBackLink = function () {
             let pages = document.getElementsByClassName("page");
             for (const page of pages) {
                 let backLink = document.createElement("a");
@@ -18,10 +18,40 @@
                 backLink.setAttribute("class", "backlink");
                 page.prepend(backLink);
             }
-        }
+        };
+
+        var switchColor = function (newColor) {
+            let colorSwitcher = document.getElementById("colorSwitcher");
+
+            let newColorCSSVar = "";
+
+            switch (newColor) {
+                case "red":
+                    newColorCSSVar = "--title-red";
+                    break;
+                case "blue":
+                    newColorCSSVar = "--title-blue";
+                    break;
+                case "green":
+                    newColorCSSVar = "--title-green";
+                    break;
+                case "purple":
+                    newColorCSSVar = "--title-purple";
+                    break;
+            }
+
+            if (newColorCSSVar != "") {
+                colorSwitcher.innerHTML = `
+                :root {
+                    --title-color: var(${newColorCSSVar});
+                }`;
+            }
+        };
     </script>
 
-    <body onload="addBackLink()">
+    <style id="colorSwitcher"></style>
+
+    <body onload="addBackLink();">
         {{template "content" .}}
     </body>
 </html>
