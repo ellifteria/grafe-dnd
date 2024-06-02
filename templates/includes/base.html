@@ -27,16 +27,10 @@
 
             switch (newColor) {
                 case "red":
-                    newColorCSSVar = "--title-red";
-                    break;
                 case "blue":
-                    newColorCSSVar = "--title-blue";
-                    break;
                 case "green":
-                    newColorCSSVar = "--title-green";
-                    break;
                 case "purple":
-                    newColorCSSVar = "--title-purple";
+                    newColorCSSVar = `--title-${newColor}`;
                     break;
             }
 
