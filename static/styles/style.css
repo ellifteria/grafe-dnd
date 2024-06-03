@@ -254,6 +254,11 @@ div.table-header {
     column-fill: auto;
 }
 
+.column-break-after {
+    -webkit-column-break-after: always;
+    break-after: column;
+}
+
 .toc {
     -webkit-column-break-inside: avoid;
     break-inside: avoid;
