@@ -131,7 +131,8 @@ table {
     page-break-inside: avoid;
     border-collapse: collapse;
     margin: auto;
-    width: 120%;
+    width: 100%;
+    max-width: 100%;
     font-family: var(--table-font);
 }
 table tr,
@@ -150,6 +151,9 @@ table tbody td {
 }
 tbody tr:nth-child(odd) {
     background: var(--monster-tan-dark);
+}
+tbody tr:nth-child(even) {
+    background: inherit;
 }
 thead th:nth-child(1),
 td:nth-child(1) {

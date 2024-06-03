@@ -30,14 +30,17 @@
                 case "blue":
                 case "green":
                 case "purple":
-                    newColorCSSVar = `--title-${newColor}`;
+                    newColorCSSVar = `var(--title-${newColor})`;
+                    break;
+                default:
+                    newColorCSSVar = `${newColor}`;
                     break;
             }
 
             if (newColorCSSVar != "") {
                 colorSwitcher.innerHTML = `
                 :root {
-                    --title-color: var(${newColorCSSVar});
+                    --title-color: ${newColorCSSVar};
                 }`;
             }
         };
